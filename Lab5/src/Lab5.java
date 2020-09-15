@@ -1,11 +1,3 @@
-/*-------------------------------------------------------------
-// AUTHOR: DONOVAN MOSES
-// FILENAME: LAB5.JAVA
-// SPECIFICATION: A PAROGRAM THAT PRINTS ROWS AND PYRAMIDS THROUGH THE USE OF LOOPS AND HELPER METHODS
-// FOR: CSE110
-// TIME SPENT: 
-//-----------------------------------------------------------*/
-
 import java.util.Scanner;
 
 public class Lab5 {
@@ -47,21 +39,12 @@ public class Lab5 {
 
                 System.out.println();
                 System.out.println(buildPyramid(SIDE_SYMB, MID_SYMB, numSymbols));
-
                 break;
-            case 'd':
-                System.out.println("Number of symbols on the middle layer?");
-                numSymbols = scanner.nextInt();
-                scanner.nextLine();  // Flush junk newline symbols
-
-                System.out.println();
-                System.out.println(buildDiamond('*', ' ', numSymbols));
-
-                break;
+                    
             case 'q':
                 System.out.println("Bye");
-                break;
                 
+                break;               
             default:
                 System.out.println("Please choose a valid option from the menu.");
                 break;
@@ -72,13 +55,7 @@ public class Lab5 {
         scanner.close();
     }
 
-    /**
-     * Build a row of symbols (pattern) with the given parameters. 
-     *
-     * For example, -----*****----- can be built by the parameters
-     *
-     * sideWidth = 5, midWidth = 5, sideSymb = '-', midSymb = '*'
-     * 
+    /* 
      * @param sideSymb  A char to be repeated on both sides
      * @param sideWidth Number of symbols on each side
      * @param midSymb   A char to be repeated in the middle
@@ -101,24 +78,11 @@ public class Lab5 {
         return result;
     }  // End of buildRow
 
-    /**
-     * Build a pyramid pattern with the given parameters.
-     *
-     * For example, the following pattern
-     *
-     *  -----*-----
-     *  ----***----
-     *  ---*****---
-     *  --*******--
-     *  -*********-
-     *  ***********
-     *
-     * can be built by sideSymb = '-', midSymb = '*', numSymbols = 11
-     *
-     * When ptnHeight is not an odd integer, replace it by the closest
-     * even integer below. For example, if numSymbols is 10, use 9 instead.
+    /*
+     * If numSymbols is not an odd integer, replace it by the closest
+     * even integer below and return an exception message. For example, if numSymbols is 10, use 9 instead.
      * 
-     * When ptnHeight is 0, return an empty String.
+     * When numSymbols is 0, return an empty String.
      * 
      * @param  sideSymb   A char to be repeated on both sides
      * @param  midSymb    A char to be repeated in the middle
@@ -143,25 +107,6 @@ public class Lab5 {
         	return result;
         }
     }
-
-    /**
-     * Build a diamond pattern. The parameters are the same 
-     * as {@link #buildPyramid(char, char, int)}.
-     * 
-     * @param  sideSymb  A char to be repeated on both sides
-     * @param  midSymb   A char to be repeated in the middle
-     * @param  numSymbols The height of a pyramid
-     * @return           A String of the inverted diamond pattern.
-     */
-    private static String buildDiamond(char sideSymb, char midSymb, int numSymbols) {
-
-        String result = "";
-        
-        // YOUR CODE HERE
-        // -->
-        
-        return result;
-    }
     
     /**
      * Display the menu
@@ -174,4 +119,4 @@ public class Lab5 {
         System.out.println("q) Quit");
     }  // End of displayMenu
 
-}  // End of Lab5
+}
